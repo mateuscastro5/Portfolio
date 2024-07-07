@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
-import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
+import { Link } from 'react-router-dom';
 
 const Navbar = styled.nav`
   position: fixed;
@@ -108,6 +109,7 @@ const Section = styled.section`
   min-height: 100vh;
   box-sizing: border-box;
   flex-direction: ${({ direction }) => direction || 'row'};
+  position: relative;
 `;
 
 const AboutContainer = styled.div`
@@ -174,7 +176,7 @@ const ProjectDescription = styled.p`
   font-family: 'Roboto', sans-serif;
 `;
 
-const MoreProjectsButton = styled(ScrollLink)`
+const MoreProjectsButton = styled(Link)`
   margin-top: 2rem;
   padding: 1rem 2rem;
   font-size: 1.5rem;
@@ -188,6 +190,8 @@ const MoreProjectsButton = styled(ScrollLink)`
   font-family: 'Roboto', sans-serif;
   text-align: center;
   text-decoration: none;
+  position: absolute;
+  bottom: 2rem;
 
   &:hover {
     background: #b20710;
@@ -360,7 +364,7 @@ function LandingPage() {
             </ProjectCard>
           ))}
         </ProjectsContainer>
-        <MoreProjectsButton to="projects" smooth={true} duration={500}>Ver Todos os Projetos</MoreProjectsButton>
+        <MoreProjectsButton to="/projects">Ver Todos os Projetos</MoreProjectsButton>
       </Section>
 
       <ContactSection id="contact">
