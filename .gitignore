@@ -21,3 +21,24 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Dependências do Node
+node_modules
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Diretórios de build
+dist
+build
+
+# Arquivos de ambiente
+.env
+
+# Sistemas operacionais
+.DS_Store
+Thumbs.db
